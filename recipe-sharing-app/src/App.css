@@ -1,0 +1,481 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f5f5f5;
+  color: #333;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #e67e22;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  color: #888;
+  font-size: 1rem;
+}
+
+.add-recipe-form {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.add-recipe-form h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+.add-recipe-form input,
+.add-recipe-form textarea {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s;
+}
+
+.add-recipe-form input:focus,
+.add-recipe-form textarea:focus {
+  outline: none;
+  border-color: #e67e22;
+}
+
+.add-recipe-form button {
+  background: #e67e22;
+  color: white;
+  border: none;
+  padding: 0.75rem 2rem;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.add-recipe-form button:hover {
+  background: #d35400;
+}
+
+.recipes-section h2 {
+  font-size: 1.3rem;
+  color: #444;
+  margin-bottom: 1rem;
+}
+
+.recipe-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.recipe-card {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 4px solid #e67e22;
+}
+
+.recipe-card h3 {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 0.4rem;
+}
+
+.recipe-card p {
+  color: #666;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.empty-message {
+  color: #aaa;
+  font-style: italic;
+  text-align: center;
+  padding: 2rem;
+}
+
+/* ── Recipe Card Links ─────────────────────────────────── */
+.recipe-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.recipe-card-link:hover .recipe-card {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+  border-left-color: #d35400;
+}
+
+.recipe-card {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-left-color 0.18s ease;
+}
+
+.view-details {
+  display: inline-block;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #e67e22;
+  font-weight: 600;
+}
+
+/* ── Recipe Details Page ───────────────────────────────── */
+.back-link {
+  display: inline-block;
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+  transition: color 0.15s;
+}
+
+.back-link:hover {
+  color: #e67e22;
+}
+
+.recipe-details-card {
+  background: white;
+  border-radius: 10px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  border-left: 4px solid #e67e22;
+}
+
+.recipe-details-card h1 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 0.75rem;
+}
+
+.recipe-description {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  white-space: pre-wrap;
+}
+
+.recipe-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── Shared Buttons ────────────────────────────────────── */
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.4rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: background 0.18s, transform 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn-primary {
+  background: #e67e22;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #d35400;
+}
+
+.btn-secondary {
+  background: #eee;
+  color: #555;
+}
+
+.btn-secondary:hover {
+  background: #ddd;
+}
+
+.btn-danger {
+  background: #e74c3c;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #c0392b;
+}
+
+/* ── Form Actions (Edit page) ──────────────────────────── */
+.form-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* ── Not Found / Error ─────────────────────────────────── */
+.not-found,
+.error-message {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #888;
+}
+
+.not-found h2 {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+/* ── Recipes Section Header ────────────────────────────── */
+.recipes-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.recipes-section-header h2 {
+  font-size: 1.3rem;
+  color: #444;
+}
+
+/* ── Search Bar ────────────────────────────────────────── */
+.search-bar {
+  background: white;
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+  margin-bottom: 1.25rem;
+}
+
+.search-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1.5px solid #ddd;
+  border-radius: 8px;
+  padding: 0.55rem 0.85rem;
+  transition: border-color 0.2s;
+}
+
+.search-input-wrapper:focus-within {
+  border-color: #e67e22;
+  box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.12);
+}
+
+.search-icon {
+  font-size: 1rem;
+  flex-shrink: 0;
+  opacity: 0.6;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 0.975rem;
+  font-family: inherit;
+  color: #333;
+  background: transparent;
+}
+
+.search-clear {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 0.85rem;
+  padding: 0 0.2rem;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.search-clear:hover {
+  color: #e74c3c;
+}
+
+/* ── Filter Chips ──────────────────────────────────────── */
+.filter-chips {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.filter-label {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-right: 0.25rem;
+  white-space: nowrap;
+}
+
+.chip {
+  background: #f0f0f0;
+  border: 1.5px solid transparent;
+  border-radius: 20px;
+  padding: 0.3rem 0.85rem;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #666;
+  transition: background 0.15s, border-color 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.chip:hover {
+  background: #ffe5cc;
+  color: #e67e22;
+}
+
+.chip-active {
+  background: #fff3e6;
+  border-color: #e67e22;
+  color: #e67e22;
+}
+
+/* ── Search Results Badge ──────────────────────────────── */
+.search-results-count {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0.75rem;
+  padding: 0.35rem 0.75rem;
+  background: #fff8f2;
+  border-radius: 6px;
+  border-left: 3px solid #e67e22;
+}
+
+/* ── Layout ────────────────────────────────────────────── */
+.home-content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.main-feed {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .home-content {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
+
+/* ── Favorites & Recommendations ───────────────────────── */
+.favorites-list,
+.recommendations-list {
+  background: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.favorites-list.empty {
+  text-align: center;
+  color: #888;
+}
+
+.favorites-list h3,
+.recommendations-list h3 {
+  font-size: 1.15rem;
+  color: #444;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 0.5rem;
+}
+
+.small-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.small-card {
+  padding: 1rem;
+  border-left-width: 3px;
+}
+
+.small-card h4 {
+  font-size: 1rem;
+  color: #333;
+  margin: 0;
+}
+
+.card-excerpt {
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.4rem;
+}
+
+/* ── Favorite Button & Card Header ─────────────────────── */
+.card-header-row,
+.details-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.details-header-row {
+  margin-bottom: 0.75rem;
+  align-items: center;
+}
+
+.details-header-row h1 {
+  margin-bottom: 0;
+}
+
+.btn-favorite {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.3rem;
+  border-radius: 50%;
+  transition: transform 0.2s, background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-favorite:hover {
+  transform: scale(1.1);
+  background: #fff0f0;
+}
