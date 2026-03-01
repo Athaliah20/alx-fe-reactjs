@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "title": "Spaghetti Carbonara",
+        "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+        "image": "https://images.unsplash.com/photo-1612874742237-6526221588e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 2,
+        "title": "Chicken Tikka Masala",
+        "summary": "Chunks of grilled chicken (tikka) cooked in a smooth buttery & creamy tomato based gravy.",
+        "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 3,
+        "title": "Beef Tacos",
+        "summary": "Flavorful ground beef served in crispy taco shells with fresh toppings.",
+        "image": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    },
+    {
+        "id": 4,
+        "title": "Garden Salad",
+        "summary": "A refreshing mix of fresh greens, tomatoes, cucumbers, and a light vinaigrette.",
+        "image": "https://images.unsplash.com/photo-1540189567436-020818299621?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+    }
+]
